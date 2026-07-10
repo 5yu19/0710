@@ -120,6 +120,7 @@
             margin-top: 10px;
             color: #555;
             line-height: 1.5;
+            word-break: keep-all; /* 단어 단위로 줄바꿈하여 가독성 향상 */
         }
 
         .scribble {
@@ -234,7 +235,7 @@
         .img-2 {
             grid-column: 1 / 5;
             grid-row: 3;
-            align-self: center;
+            align-self: start; 
             z-index: 5;
             margin-left: 30%;
         }
@@ -294,8 +295,7 @@
 
         <div class="img-2">
             <img src="2.JPG" alt="두 번째 이미지">
-            <p class="img-caption" style="color: #ff6b6b;">홍대에 평소 좋아하는 Love Is Art라는 카페입니다! <br> 풀들이 가득해서 꽤나 싱그러워요 ㅎㅎ
-            </p>
+            <p class="img-caption" style="color: #ff6b6b; width: 90%;">홍대에 평소 좋아하는 Love Is Art라는 카페입니다! <br>풀들이 가득해서 꽤나 싱그러워요 ㅎㅎ</p>
         </div>
 
         <div class="content-section section-2">
@@ -307,7 +307,6 @@
             <div class="scribble scribble-zigzag zigzag-1"></div>
         </div>
 
-        <!-- 섹션 3 -->
         <div class="content-section section-3">
             <div class="scribble scribble-circle circle-1"></div>
             <div class="scribble scribble-box box-1"></div>
@@ -319,7 +318,7 @@
 
         <div class="img-3">
             <img src="3.png" alt="세 번째 이미지">
-            <p class="img-caption" style="color: #ff6b6b; width: 100%;">봄전으로 했던 무형의 상점 처음 화면입니다!</p>
+            <p class="img-caption" style="color: #ff6b6b;">봄전으로 했던 무형의 상점 처음 화면입니다!</p>
         </div>
 
         <div class="img-4">
