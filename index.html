@@ -9,15 +9,15 @@
     <style>
         :root {
             --display-font: 'Anton', sans-serif;
-            --body-font: 'Do Hyeon', sans-serif; /* 소제목용 폰트 */
-            --point-color: #ff0000; /* 임팩트 있는 빨간색 */
+            --body-font: 'Do Hyeon', sans-serif;
+            --point-color: #ff0000; 
             --bg-color: #f4f1ea;
             --text-color: #1a1a1a;
         }
 
         body {
             background-color: var(--bg-color);
-            /* 종이 질감 텍스처 */
+       
             background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><filter id="n" x="0" y="0"><feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="10" stitchTiles="stitch"/></filter><rect width="100" height="100" filter="url(%23n)" opacity="0.1"/></svg>');
             font-family: var(--body-font);
             color: var(--text-color);
@@ -35,7 +35,6 @@
             gap: 20px;
         }
 
-        /* 헤더 섹션 */
         .header {
             grid-column: 1 / -1;
             position: relative;
@@ -45,14 +44,13 @@
 
         h1 {
             font-family: var(--display-font);
-            font-size: clamp(4rem, 20vw, 15rem); /* 제목 크기 축소 */
+            font-size: clamp(4rem, 20vw, 15rem); 
             line-height: 0.8;
             margin: 0;
             color: var(--text-color);
             position: relative;
         }
 
-        /* 글씨 질감 */
         h1::after {
             content: attr(data-text);
             position: absolute;
@@ -65,12 +63,12 @@
         }
 
         .h1-intro {
-            z-index: 3; /* 이미지보다 위에 오도록 */
+            z-index: 3; 
         }
 
         .h1-myself {
             color: var(--point-color);
-            z-index: 3; /* 이미지보다 위에 오도록 */
+            z-index: 3; 
         }
 
         .header-img {
@@ -79,8 +77,8 @@
             max-width: 400px;
             height: 40vw;
             max-height: 550px;
-            background-color: #ccc; /* 이미지 없을 시 회색 박스 */
-            /* background-image: url(여기에-헤더-이미지.jpg); */
+            background-color: #ccc;
+       
             background-size: cover;
             background-position: center;
             top: 50%;
@@ -89,7 +87,7 @@
             z-index: 2;
         }
 
-        /* 비대칭 그리드 섹션 */
+
         .content-section {
             position: relative;
             padding: 20px 0;
@@ -112,20 +110,18 @@
             font-size: 1.1rem;
             line-height: 1.8;
             font-weight: 400;
-            color: #777; /* 연한 회색으로 변경 */
+            color: #777; 
         }
 
         .img-caption {
-            font-family: 'Gaegu', cursive; /* 동글동글한 글씨체로 변경 */
-            font-size: 1rem; /* 폰트 크기 추가 축소 */
+            font-family: 'Gaegu', cursive; 
+            font-size: 1rem; 
             text-align: center;
             margin-top: 10px;
             color: #555;
-            width: 90%; /* 이미지 너비와 맞춤 */
             line-height: 1.5;
         }
 
-        /* 꾸밈 요소 (수제 느낌) */
         .scribble {
             position: absolute;
             z-index: -1;
@@ -219,31 +215,20 @@
             transform: rotate(-90deg);
         }
 
-        /* 이미지 배치 */
-        .img-container {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-        }
-
-        .img-container img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
         .img-1 {
             grid-column: 8 / 13;
             grid-row: 2;
             align-self: end;
-            display: flex;
-            gap: 10px;
-            align-items: flex-start;
         }
 
-        .img-1 img {
-            flex: 1;
-            min-width: 0;
+        .img-1-wrapper {
+            display: flex;
+            gap: 10px;
+        }
+
+        .img-1-wrapper img {
+            width: 50%;
+            height: auto;
         }
 
         .img-2 {
@@ -251,28 +236,26 @@
             grid-row: 3;
             align-self: center;
             z-index: 5;
-            margin-left: 30%; /* 오른쪽으로 조금 이동 */
+            margin-left: 30%;
         }
 
-        .img-2 .img-container {
-            width: 90%;
-            height: 350px; /* 컨테이너 높이 확대 */
-        }
         .img-2 img {
-            height: 100%;
-            object-fit: cover; /* 비율 유지하며 컨테이너 채우기 (잘림 발생) */
-        }
-
-        .img-3 .img-container {
-            width: 100%;
+            width: 90%;
+            height: 350px;
+            object-fit: cover;
         }
 
         .img-3 {
             grid-column: 8 / 13;
             grid-row: 4;
             align-self: center;
-            width: 116%; /* 이미지 크기 확대 */
-            margin-left: -5%; /* 왼쪽으로 조금 이동 */
+            width: 116%;
+            margin-left: -5%;
+        }
+
+        .img-3 img, .img-4 img {
+            width: 100%;
+            height: auto;
         }
 
         .img-4 {
@@ -294,31 +277,27 @@
             <h1 class="h1-myself" data-text="MYSELF!">MYSELF!</h1>
         </header>
 
-        <!-- 섹션 1 -->
         <div class="content-section section-1">
             <h2>안녕하세요 저는...</h2>
             <p>삼수 끝에 미자전으로 입학하게 된 26학번 유하은이라고 합니다! 저는 대학생 신분으로 처음으로 방학을 맞이했는데요...<br>
             무더운 여름이라 에어컨을 달고 살고 있습니다 ㅎㅁㅎ 무더위 속에서도 한글꼴연구회와 함께 여름전을 할 수 있어 영광이에요!</p>
             <div class="scribble scribble-arrow arrow-1"></div>
         </div>
-
-        <!-- 이미지 1 (과감한 크롭) -->
-        <div class="img-container img-1">
-            <div class="deco-text" style="top: 20%; left: -60px;">ISSUE-01</div>
-            <img src="1.jpeg" alt="첫 번째 이미지">
-            <img src="1-1.jpeg" alt="1-1 이미지">
+   
+        <div class="img-1">
+            <div class="deco-text" style="top: 20%; left: -60px;">SUMMER 26</div>
+            <div class="img-1-wrapper">
+                <img src="1.jpeg" alt="첫 번째 이미지">
+                <img src="1-1.jpeg" alt="1-1 이미지">
+            </div>
         </div>
 
-        <!-- 이미지 2 (텍스트와 겹침) -->
         <div class="img-2">
-            <div class="img-container">
-                <img src="2.JPG" alt="두 번째 이미지">
-            </div>
+            <img src="2.JPG" alt="두 번째 이미지">
             <p class="img-caption" style="color: #ff6b6b;">홍대에 평소 좋아하는 Love Is Art라는 카페입니다! <br> 풀들이 가득해서 꽤나 싱그러워요 ㅎㅎ
             </p>
         </div>
 
-        <!-- 섹션 2 -->
         <div class="content-section section-2">
             <h2>제가 좋아하는 건...
                 <div class="scribble scribble-underline"></div>
@@ -338,20 +317,16 @@
             <p>얼마전 봄전으로 '무형의 상점'이라는 가상의 감정을 판매하는 상점을 기획했었는데, 평소 말로 다루기 어렵고 추상적인 형태의 것들을 시각적으로 풀어내는 것에 관심이 있었기에 이 주제를 다루게 됐습니다 첫 전시라 조금 밤티.....인 것 같긴 하지만 아디팀의 멋진 피드백과! 프로토 분들의 불타는 열정덕에 잘 끝낼 수 있던 것 같아요~!!</p>
         </div>
 
-        <!-- 이미지 3 -->
-        <div class="img-container img-3">
-            <div class="img-container">
-                <img src="3.png" alt="세 번째 이미지">
-            </div>
+        <div class="img-3">
+            <img src="3.png" alt="세 번째 이미지">
             <p class="img-caption" style="color: #ff6b6b; width: 100%;">봄전으로 했던 무형의 상점 처음 화면입니다!</p>
         </div>
 
-        <!-- 이미지 4 -->
-        <div class="img-container img-4">
+        <div class="img-4">
             <img src="4.jpeg" alt="네 번째 이미지">
         </div>
 
-        <!-- 섹션 4 -->
+
         <div class="content-section section-4">
             <h2>앞으로...</h2>
             <p>앞으로 한글꼴연구회 부원분들과 협업하며 전시를 통해 제 무의식 중에 잠재해있던 생각들을 마구마구 꺼낼 수 있는 기회가 됐으면 좋겠네요! 모두 모두 화이팅입니다~</p>
